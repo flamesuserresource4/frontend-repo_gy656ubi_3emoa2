@@ -1,24 +1,24 @@
-import { useState } from 'react'
+import DashboardHeader from './components/DashboardHeader'
+import ActivityTypeManager from './components/ActivityTypeManager'
+import ActivityControls from './components/ActivityControls'
+import ActivityChart from './components/ActivityChart'
+import RecentActivities from './components/RecentActivities'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6">
+        <DashboardHeader />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 space-y-6">
+            <ActivityChart />
+            <ActivityControls />
+          </div>
+          <div className="space-y-6">
+            <ActivityTypeManager />
+            <RecentActivities />
+          </div>
         </div>
       </div>
     </div>
