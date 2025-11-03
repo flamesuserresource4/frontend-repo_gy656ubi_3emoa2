@@ -1,28 +1,28 @@
-import DashboardHeader from './components/DashboardHeader'
-import ActivityTypeManager from './components/ActivityTypeManager'
-import ActivityControls from './components/ActivityControls'
-import ActivityChart from './components/ActivityChart'
-import RecentActivities from './components/RecentActivities'
+import React from 'react';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6">
-        <DashboardHeader />
+    <div className="min-h-screen bg-white text-zinc-900 antialiased">
+      <Hero />
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 space-y-6">
-            <ActivityChart />
-            <ActivityControls />
-          </div>
-          <div className="space-y-6">
-            <ActivityTypeManager />
-            <RecentActivities />
-          </div>
-        </div>
+      {/* Subtle divider */}
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="my-12 h-px w-full bg-gradient-to-r from-transparent via-zinc-200 to-transparent" />
       </div>
+
+      <Projects />
+      <Skills />
+      <Contact />
+
+      <footer className="mx-auto max-w-6xl px-6 pb-12 pt-8 text-xs text-zinc-500">
+        © {new Date().getFullYear()} Backend Developer Portfolio. Built with React and Tailwind.
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
